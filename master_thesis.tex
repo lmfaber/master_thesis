@@ -85,7 +85,7 @@
 % Pictures
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
-\usepackage[labelfont=bf]{caption}
+\usepackage[labelfont=bf,font=small]{caption}
 \captionsetup{justification=justified,singlelinecheck=false}
 
 \usepackage{wrapfig}
@@ -152,7 +152,7 @@
 \usepackage[onehalfspacing]{setspace}
 
 \begin{document}
-	
+
 	% Keine Seitenzahlen im Vorspann
 	\pagestyle{empty}
 	% Titelblatt der Arbeit
@@ -160,20 +160,20 @@
 		\begin{center}
 			\begin{figure}[H]
 				\centering
-				\includegraphics[width=0.75\textwidth]{images/Logo-Paket_Uni_Jena/Logo_Uni_Jena/Bild-Wort-Marke/jpg/UniJena_BildWortMarke_blue.jpg}
+				\includegraphics[width=0.6\textwidth]{images/Logo-Paket_Uni_Jena/Logo_Uni_Jena/Bild-Wort-Marke/jpg/UniJena_BildWortMarke_blue.jpg}
 			\end{figure}
 	
 			\vspace*{2cm}
-			\begin{large}
+			\begin{Large}
 				Combining k-mer and quasi-read-mapping\\
 				methods to improve the clustering of\\
 				multiple \textit{de novo} transcriptome assemblies\\
-			\end{large}
+			\end{Large}
 
 			\vspace{2cm}
-			\begin{large}
-			\textbf{M A S T E R  T H E S I S}\\
-			\end{large}
+			\begin{Large}
+			\textbf{M~A~S~T~E~R~'~S~~~T~H~E~S~I~S}\\
+			\end{Large}
 			~\\
 			to obtain the academic degree\\
 			Master of Science (M. Sc.)\\
@@ -196,18 +196,18 @@
 \newgeometry{left=4cm, right=2cm, bottom=3cm, top=3cm}
 
 \section*{Abstract}
-	Many \textit{de novo} transcriptome assemblers yield different results due to their distinct implementations. This master's thesis aims to use the advantages of several assemblers and create an improved \textit{de novo} transcriptome assembly. By concatenating multiple assemblies that complicates downstream analysis such as annotation of the transcripts and the identification of differentially expressed isoforms. Here, a new algorithm based on \textbf{K}-mer \textbf{A}nd quasi-\textbf{R}ead-\textbf{MA}ppings (\karma) is implemented that can be used on paired-end and single-end RNA-Seq data. The method relies on recent k-mer and read-graph-based clustering methods that are combined and enhanced. \karma is compared to state-of-the-art clustering tools and evaluated in terms of completeness and correctness of the resulting \textit{de novo} transcriptome assembly.
+	Many \textit{de novo} transcriptome assemblers yield different results due to their distinct implementations. This master's thesis aims to use the advantages of several assemblers and create an improved \textit{de novo} transcriptome assembly. Concatenating multiple assemblies complicates the downstream analysis, such as annotation of the transcripts and the identification of differentially expressed isoforms. Here, a new algorithm based on \textbf{K}-mer \textbf{A}nd quasi-\textbf{R}ead-\textbf{MA}ppings (\karma) is implemented that can be used on paired-end and single-end RNA-Seq data. The method relies on recent k-mer and read-graph-based clustering methods that are combined and enhanced. \karma is compared to state-of-the-art clustering tools and evaluated in terms of completeness and correctness of the resulting \textit{de novo} transcriptome assembly.
 	
 	Conclusively, it seems sufficient to rely on a single assembler rather than combining multiple assemblers for the most use cases. However, preprocessing of reads, assembler choice and suitable k-mer size should be carefully considered. Clustering single-end datasets with \cdhit with a sequence identity of 90~\% show significant improvements for the assemblies.
-	Even though \karma was not able to outperform other clustering methods, a comprehensive evaluation of the underlying algorithm is performed. The read-graphs built by \karma can be utilized for further investigations of reliable isoforms reconstructed \textit{de novo} from transcriptomic sequencing data.
+	Even though \karma was not able to outperform other clustering methods, a comprehensive evaluation of the underlying algorithm is performed. The read-graphs built by \karma can be utilized for further investigations of reliable \textit{de novo} reconstructed isoforms from transcriptomic sequencing data.
 
 \newpage
 \section*{Zusammenfassung}
-    Viele \textit{de novo} Transkriptom-Assembler produzieren aufgrund ihrer unterschiedlichen Implementierungen verschiedene Ergebnisse. Ziel dieser Masterarbeit ist es, die Vorteile mehrerer Assembler zu nutzen um eine verbesserte \textit{de novo} Transkriptom-Assemblierung zu erhalten. Die durch diese Methode entstehende Redundanz soll mittels eines eigens implementierten Algorithmus reduziert werden. Der Algorithmus (\karma, engl. \textbf{K}-mer \textbf{A}nd quasi-\textbf{R}ead-\textbf{MA}ppings) benutzt, kombiniert und verbessert bereits bestehende k-mer und Graphen-basierte Methoden.
-    Die Methode eignete sich außerdem für Single-End und Paired-End Datensätze von RNA-Sequenzierungen.
-    Die Methode wird mit aktuellen Clustering-Programmen verglichen und hinsichtlich Vollständigkeit und Qualität der resultierenden \textit{de novo} Transkriptom-Assemblierung bewertet.
+    Viele \textit{de novo} Transkriptom-Assemblierer produzieren aufgrund ihrer unterschiedlichen Implementierungen verschiedene Ergebnisse. Ziel dieser Masterarbeit ist es, die Vorteile mehrerer Assemblierer zu nutzen, um eine verbesserte \textit{de novo} Transkriptom-Assemblierung zu erhalten. Die durch diese Methode entstehende Redundanz soll mittels eines eigens implementierten Algorithmus reduziert werden. Der Algorithmus (\karma, engl. \textbf{K}-mer \textbf{A}nd quasi-\textbf{R}ead-\textbf{MA}ppings) benutzt, kombiniert und verbessert bereits bestehende k-mer und Graphen-basierte Methoden.
+    Die Methode eignet sich außerdem für Single-End und Paired-End Datensätze von RNA-Sequenzierungen.
+    \karma wird mit aktuellen Clustering-Programmen verglichen und hinsichtlich der Vollständigkeit und Qualität der resultierenden \textit{de novo} Transkriptom-Assemblierung bewertet.
     
-	Für die meisten Anwendungsfälle ist es ausreichend, einen einzigen Assembler zu verwenden. Allerdings sollte die Vorverarbeitung von Reads, die Wahl des Assemblers und eine geeignete k-mer-Länge sorgfältig gewählt werden. Für Single-End-Datensätze erzielt \cdhit mit einer Sequenzidentität von 90~\% signifikante Verbesserungen für die Transkriptom-Assemblierung.
+	Für die meisten Anwendungsfälle ist es ausreichend, einen einzigen Assemblierer zu verwenden. Allerdings sollte die Vorverarbeitung von Reads, die Wahl des Assemblierers und eine geeignete k-mer-Länge sorgfältig gewählt werden. Für Single-End-Datensätze erzielt \cdhit mit einer Sequenzidentität von 90~\% signifikante Verbesserungen für die Transkriptom-Assemblierung.
 	Die von \karma erstellten Graphen können für weitere Untersuchungen von zuverlässig \textit{de novo} rekonstruierten Isoformen aus Transkriptomdaten verwendet werden.
 	
 
@@ -228,9 +228,7 @@
     Understanding biological processes at the molecular level has always been of great interest to life science researchers.
     Being responsible for cellular mechanisms and responses, the transcriptome is a research topic of significant importance \citep{rnaseq:09}.
 	The transcriptome represents all RNA molecules in a cell, reflecting its gene expression. Consequently, the methods for investigation of the transcriptome have made some remarkable changes over the past decade \citep{rev_rnaseq:17}. In the early days of molecular research, methods were time-consuming and restricted only to a small number of genes. The genes of interest were commonly chosen by hand, based on the function already known in other organisms \citep{Fitzpatrick:05}.
-	This changed drastically with the appearance of microarrays that could be used to examine a large set of RNAs simultaneously, speeding up the research process \citep{Bhargava:13, Tarca:06}. With the rise of Next-Generation Sequencing methods provided by Illumina, things got a lot easier again.
-	With the advent of Next-Generation Sequencing methods such as provided by Illumina, transcriptome analysis became possible on an unprecedented scale and affordable for many research groups.
-	
+	This changed drastically with the appearance of microarrays that could be used to examine a large set of RNAs simultaneously, speeding up the research process \citep{Bhargava:13, Tarca:06}. With the rise of Next-Generation Sequencing methods such as provided by Illumina, transcriptome analysis became possible on an unprecedented scale and affordable for many research groups.
 	Nowadays, it is possible to get information about the whole transcriptome of an entire organism in a cheap and comprehensive way by sequencing the RNA (RNA-Seq). In particular, RNA-Seq data can also provide information about new organisms where there has no genome been sequenced yet.
 	
 	\subsection{RNA-Sequencing data}
@@ -239,36 +237,35 @@
 		\def\svgwidth{0.6\textwidth}
 		\vspace{-20pt}
 		\input{images/01_intro/rna_seq.pdf_tex}
-		\caption[Search results for `RNA-Seq']{Search results for `RNA-Seq' on Pubmed over the years \citep{growth}.}
+		\captionsetup{width=.95\linewidth}
+		\caption[Search results for `RNA-Seq' on Pubmed over the years.]{Search results for `RNA-Seq' on Pubmed over the years \citep{growth}.}
 		\label{img:growth}
 	\end{wrapfigure}
 
-    Since the design of microarrays relies on already known genes, RNA-Seq is superior for less-studied species lacking an appropriate reference genome \citep{Wang:09}. But RNA-Seq has even more advantages compared to microarrays. Over time it is becoming more and more cost-effective, has a higher sensitivity and accuracy and allows for the detection of new transcripts including non-coding RNA (ncRNA) \citep{Rodriguez-Garcia:17}.
-	The inclusion of RNA-Seq data is now part of the standard repertoire in many studies (Figure~\ref{img:growth}). For example, \citeauthor{Wang:19} have used RNA-Seq data for ovarian cancer research. Their findings lead to earlier detection and identification of the pathological origin by determining the responsible genes hence dysregulated molecular pathways \citep{Wang:19}.
+    Since the design of microarrays relies on already known genes, RNA-Seq is superior for less-studied species lacking an appropriate reference genome \citep{rnaseq:09}. But RNA-Seq has even more advantages compared to microarrays. Over time it is becoming more and more cost-effective, has a higher sensitivity and accuracy and allows for the detection of new transcripts, including non-coding RNA (ncRNA) \citep{Rodriguez-Garcia:17}.
+	The inclusion of RNA-Seq data is now part of the standard repertoire in many studies (Figure~\ref{img:growth}). For example, \citeauthor{Wang:19} have used RNA-Seq data for ovarian cancer research \citep{Wang:19}. Their findings lead to earlier detection and identification of the pathological origin by determining the responsible genes hence dysregulated molecular pathways \citep{Wang:19}.
 	Furthermore, \citeauthor{Rai:18} describe the supremacy of RNA-Seq data analysis over microarrays in their studies of profiling human ligament tissue \citep{Rai:18}.
 	With all the advantages from above, the number of publications that use RNA-Seq data for their analyses has been steadily growing over the past few years (Figure~\ref{img:growth}). Along with the increase of publications comes a large number of freely available RNA-Seq datasets in the NCBI Sequence Read Archive (SRA) and EMBL-EBI European Nucleotide Archive (ENA).
 
 
 \subsection{Transcriptome reconstruction}
     Besides the use for differential gene expression analyses, RNA-Seq data can also be applied to assemble the transcripts of the whole transcriptome.
-    This includes all different forms of gene expression, which is the transcribed from the genomic DNA into RNA molecules. These can be categorized either as non-coding RNA or protein-coding RNA. The latter is further processed and translated into a protein that fulfills a certain function in the cell. However, before the translation into a protein, the protein-coding RNA can be altered through post-transcriptional modifications such as alternative splicing. The resulting distinct variants of the same gene represent different isoforms \citep{splicing:03}. Contrarily, a non-coding RNA is not translated into a protein, but functions as it is \citep{ncRNA:05}.
+    This includes all different forms of expressed genes, hence the transcription from the genomic DNA into RNA molecules. These can be categorized either as non-coding RNA or protein-coding RNA. The latter is further processed and translated into a protein that fulfills a certain function in the cell. However, before the translation into a protein, the protein-coding RNA can be altered through post-transcriptional modifications such as alternative splicing. The resulting distinct variants of the same gene represent different isoforms \citep{splicing:03}. Contrarily, a non-coding RNA is not translated into a protein, but functions as it is \citep{ncRNA:05}.
     
-    The widely used Illumina protocols all rely on fragmentation steps, thus produce reads of lengths between approximately 100-350~base pairs (bp). Consequently, the shorter reads have to be combined (\textit{assembled}) to reconstruct the original transcript sequences. The final transcripts are also called contiguous sequences (\textit{contigs}). However, assembling the reads in a way that they represent their original biological state comes with a few challenges to solve such as the orientation of reads, repeats, contamination, sequencing errors and chimeras \citep{rev_rnaseq_problems:11}.
-
-	Additionally, an assembly can be done either with a reference genome or without \citep{transcriptome_misassemblies:11}. Reconstruction while having no reference available is called a \textit{de novo} assembly and makes the task more difficult since there is no previous knowledge about the order of the reads.
-	For further processing, the a (\textit{de novo}) transcriptome assembly should be complete in isoforms \citep{transcriptome_isoforms:18}, have low redundancy \citep{transcriptome_redundancy:15} and as few misassembled transcripts as possible \citep{transcriptome_misassemblies:11}. 
-	The general aim of a (\textit{de novo}) transcriptome assembly should be completeness in terms of isoforms but at the same time low redundancy and as few misassembled transcripts as possible.
-	
-	Fortunately, there are a lot of tools that are already dealing with the transcriptome assembly problem such as \soap \citep{SOAPdenovo-Trans:14}, \trinity \citep{Trinity:11}, \transabyss \citep{Trans-ABySS:10} and \spades \citep{rnaSPAdes:18}. Unfortunately, all these tools have different advantages and disadvantages also depending on the input data set \citep{hoelzer:19}. All those programs are based on k-mer dependent De Bruijn graphs, where the reads are divided into subsets of length $k$ \citep{rev_bruijn:11}. The selection of the correct k-mer size can be a challenge itself. Whereas small k-mer sizes tend to recover less abundant transcripts, they produce a lot of contigs that suffer from fragmentation due to lack of overlap and sequencing errors. On the other hand, big k-mer sizes have the advantage of producing a more connected assembly that consists of high coverage transcripts and spliced variants. Yet, the assembly contains fewer contigs which leads to a lower transcript representation \citep{Rana:16}. There are existing tools that try to estimate the best available k-mer size such as \kmergenie. The developers of the program also conclude that combining assemblies from a small and big k-mer size can be beneficial \citep{kmerGenie:13}, nowadays a common procedure implemented in assembly tools such as \spades \citep{rnaSPAdes:18}.
-	
-	Despite being based on De Bruijn graphs, all of the assemblers likely yield different assemblies due to the different implementations and assumptions of their developers. \citeauthor{OysterRiverProtocol:18} implemented the \orp \citep{OysterRiverProtocol:18} to combine multiple assemblies to receive an overall better assembly. The assumption here is that the combination of multiple assemblies will negate weaknesses from single assemblers and results in a better overall assembly. Even though more information from multiple assemblers is gained \citep{hoelzer:19}, a lot of redundancy is introduced that has to be taken care of through clustering.
-	This master's thesis takes up this idea and deals more deeply with the problem of transcript clustering.
-	Since many clusterings and their underlying methods are based on the concept of graphs, the following section will give a brief introduction to the topic.
+    The widely used Illumina sequencing protocols all rely on fragmentation steps, thus produce reads of lengths between approximately 100-350~base pairs (bp). Consequently, the shorter reads have to be combined (\textit{assembled}) to reconstruct the original transcript sequences. The final transcripts are also called contiguous sequences (\textit{contigs}). However, assembling the reads in a way that they represent their original biological state comes with a few challenges to solve, such as the orientation of reads, repeats, contamination, sequencing errors and chimeras \citep{rev_rnaseq_problems:11}.
+    
+    Additionally, an assembly can be done either with a reference genome or without \citep{transcriptome_misassemblies:11}. Reconstruction, while having no reference available, is called a \textit{de novo} assembly and makes the task more difficult since there is no previous knowledge about the order of the reads.
+    The general aim of a (\textit{de novo}) transcriptome assembly should be complete in isoforms \citep{transcriptome_isoforms:18}, have low redundancy \citep{transcriptome_redundancy:15} and as few misassembled transcripts as possible \citep{transcriptome_misassemblies:11}. 
+    
+    Fortunately, there are a lot of tools that are already dealing with the transcriptome assembly problem such as \soap \citep{SOAPdenovo-Trans:14}, \trinity \citep{Trinity:11}, \transabyss \citep{Trans-ABySS:10} and \spades \citep{rnaSPAdes:18}. However, all these tools have different advantages and disadvantages also depending on the input data set \citep{hoelzer:19}. All those programs are based on k-mer dependent De Bruijn graphs, where the reads are divided into subsequences of length $k$ during the assembly process \citep{rev_bruijn:11}. The selection of the correct k-mer size can be a challenge itself. Whereas small k-mer sizes tend to recover less abundant transcripts, they produce a lot of contigs that suffer from fragmentation due to lack of overlap and sequencing errors. On the other hand, big k-mer sizes have the advantage of producing a more connected assembly that consists of high coverage transcripts and spliced variants. Yet, the assembly contains fewer contigs, which leads to a lower transcript representation \citep{Rana:16}. There are existing tools that try to estimate the best available k-mer size, such as \kmergenie \citep{kmerGenie:13}. The developers of the program also conclude that combining assemblies from a small and big k-mer size can be beneficial \citep{kmerGenie:13}, nowadays a common procedure implemented in assembly tools such as \spades \citep{rnaSPAdes:18}.
+    
+    Despite being based on De Bruijn graphs, all of the assemblers likely yield different assemblies due to the distinct implementations and assumptions of their developers. \citeauthor{OysterRiverProtocol:18} implemented the \orp \citep{OysterRiverProtocol:18} to combine multiple assemblies to receive an overall better assembly. The assumption here is that the combination of multiple assemblies will negate weaknesses from single assemblers and results in a better overall assembly. Even though more information from multiple assemblers is gained \citep{hoelzer:19}, a lot of redundancy is introduced that has to be taken care of through clustering.
+    This master's thesis takes up this idea and deals more deeply with the problem of transcript clustering.
+    Since many clusterings and their underlying methods are based on the concept of graphs, the following section will give a brief introduction into the topic.
 	
 \subsection{Basic graph theory}    	
     In short, a graph is a data structure to represent a relationship between objects. The formal description of a graph is $ G = (V, E, \omega) $, where a set of objects represent the vertices $V$ and their relationship among them as edges $E$.
 	A distance based on a function $\omega$ can be assigned to the edges to show a (dis-) similarity between different vertices. This value is also called the weight of an edge but is not a necessary property for a graph. Without the weights, the graph is called an \textit{unweighted graph} (Figure~\ref{img:graphs}A) or with weights a \textit{weighted graph} (Figure~\ref{img:graphs}B), respectively.
-	
 	\begin{figure}[h]
 		\centering
 		\def\svgwidth{\textwidth}
@@ -276,39 +273,34 @@
 		\caption[Visualization of different graphs.]{Visualization of different graphs. \textbf{(A)} A directed unweighted graph. \textbf{(B)}~An undirected weighted graph with weights between 0.1 and 0.9.}
 		\label{img:graphs}
 	\end{figure}
-	
-	Furthermore, the graph can be directed or undirected. Assuming a walk through the graph from vertice to vertice using the edges as connections, directed edges only allow for a walk in one direction between two vertices (Figure~\ref{img:graphs}A). In an undirected graph, both directions are allowed (Figure~\ref{img:graphs}B) \citep{graph-theory:13}.
-	The above-mentioned representation of objects and their similarities offer one possibility to cluster objects.
-	%A cluster would then be defined as a connected sub-graph \citep{graph-based:07}.
-	%One widely used algorithm is the Markov Cluster Chain algorithm (\mcl) \citep{mcl:00}.
+	Furthermore, the graph can be either \textit{directed} or \textit{undirected}. Assuming a walk through the graph between vertices using the edges as connections, directed edges only allow for a walk in one direction between two vertices (Figure~\ref{img:graphs}A). In an undirected graph, both directions are allowed (Figure~\ref{img:graphs}B) \citep{graph-theory:13}.
+    The representation mentioned above of objects and their similarities offer one possibility to cluster objects.
 
 \subsection{Clustering}
 	\label{ss:clustering}
-    Simply said, clustering describes the process of grouping a certain dataset into subsets of similar properties. It is a problem that is not only bound to data science or bioinformatics but affects us every day e.g. while sorting laundry.
-	\begin{wrapfigure}{R}{0.5\textwidth}
-		\centering
-		\def\svgwidth{0.5\textwidth}
-		\vspace{-20pt}
-		\input{images/01_intro/base.pdf_tex}
-		\caption[Graphical illustration of objects in two-dimensional space.]{Graphical illustration of objects in a two-dimensional feature space.}.
-		\label{img:base_cluster}
-		\vspace{-20pt}
+    \begin{wrapfigure}[15]{R}{0.5\textwidth}
+	\centering
+	\def\svgwidth{0.5\textwidth}
+	\vspace{-37pt}
+	\input{images/01_intro/base.pdf_tex}
+	\captionsetup{width=.95\linewidth}
+	\caption[Graphical example of objects in a two-dimensional feature space.]{Graphical example of objects in a two-dimensional feature space. Different colored dots represent groups of objects with distinct distributions.}.
+	\label{img:base_cluster}
+	\vspace{-20pt}
 	\end{wrapfigure}
-
-	The objects in the datasets usually have a vector of properties, which is a list of features for this data point. This can be seen as a simple representation of a multi-dimensional feature space (Figure~\ref{img:base_cluster}).
-
+    Simply said, clustering describes the process of grouping a certain dataset into subsets of similar properties. 
+	It is a problem that is not only bound to data science or bioinformatics but affects us every day e.g., while sorting laundry.
+	The objects in the datasets usually have a vector of properties, which is a list of features for the data point. This can be seen as a simple representation of a multi-dimensional feature space (Figure~\ref{img:base_cluster}).
+	
 	In science, clustering is generally a classification problem.
 	There are two main categories of classifications, unsupervised and supervised. When speaking of the latter, there is an existing set of examples based on which the classification task tries to classify new objects into existing labels.
-	Contrarily, unsupervised classification tries to identify unknown patterns in a dataset, without having pre-existing labels available.
+	Contrarily, unsupervised classification tries to identify unknown patterns in a dataset without having pre-existing labels available.
 	Therefore, clustering is unsupervised learning, where the resulting groups are based on some similarity among those objects \citep{cl_technique:17}. 
 	The resulting subsets from the process are also called clusters.
-
-	For the clustering task, there are already a wide number of implemented algorithms that can be categorized in at least one of the following four groups.
+	For the clustering task, there are already a vast number of implemented algorithms that can be categorized in at least one of the following four groups.
 	
-\subsubsection*{Connectivity-based clustering (hierarchical clustering)}
-
+\subsubsection*{Hierarchical-based clustering (Connectivity-based clustering)}
 	The hierarchical clustering is mainly based on the distance between objects, which represents a hierarchy (Figure~\ref{img:hierarchical}). The core idea is that objects are more related to objects closer to them than those further away.
-		
 	From the resulting hierarchy, there are two methods to extract the clusters. The bottom-up approach (agglomerative) starts with each object in its own cluster. Going up the hierarchy, the objects are then merged into clusters.
 	The top-down approach (divisive) starts with all objects in one cluster. Going down the hierarchy, the first cluster is subsequently divided into smaller sub-clusters \citep{hierarchical:09}.
 	
@@ -317,19 +309,18 @@
 		\def\svgwidth{\textwidth}
 		\vspace{-15pt}
 		\input{images/01_intro/hierarchy_combine.pdf_tex}
-		\caption[Hierarchical-based clustering.]{Hierarchical-based clustering. The distance between the objects is calculated as Euclidean distance. Clusters are created utilizing single-linkage with a threshold of 0.1 (red dashed line). \textbf{(A)}~Representation of the hierarchy as dendrogram with Euclidean distance. \textbf{(B)}~The resulting clusters. Black dots represent unclustered single objects.}
+		\caption[Hierarchical-based clustering using the single-linkage method.]{Hierarchical-based clustering using the single-linkage method. The distance between the objects is calculated as Euclidean distance. Clusters are created with a threshold of 0.1 (red dashed line). \textbf{(A)}~Representation of the hierarchy as a dendrogram with Euclidean distance. \textbf{(B)}~The resulting clusters. Black dots represent single unclustered objects.}
 		\label{img:hierarchical}
 	\end{figure}
 
 	In order to compare the similarity of clusters, the linkage criterion has to be chosen, such as single-linkage clustering (closest objects of two clusters), complete-linkage clustering (farthest away objects) or average-linkage clustering \citep{linkage_criterion:13}. This is necessary, since a cluster may contain more than one object, and there has to be one candidate per cluster to calculate the distance from.
-		
 	Rather than providing one solution for the clustering problem, this method can provide different clusters based on the chosen distance.
+	\newpage
 		
-\subsubsection*{Centroid-based clustering (partitioning)}
+\subsubsection*{Centroid-based clustering (Partitioning-based clustering)}
     Generally speaking, this method sets initial cluster centers (centroids) and shifts them iteratively until no further change is observed.
-
 	One of the most well-known algorithms in this category is the k-means algorithm.
-	The centroids are selected randomly and all other objects are assigned to the closest centroid sequence (Figure~\ref{img:centroid}A). The cluster centers are then updated to be the mean of all objects in the cluster. These two steps are repeated until the clusters don't change anymore (Figure~\ref{img:centroid}B) \citep{k-means:01}. Usually, the Euclidean, Monkowski or Manhattan metrics are used for distance computation. During the shifting process, objects also may change their clusters.
+	The centroids are selected randomly and all other objects are assigned to the closest centroid sequence (Figure~\ref{img:centroid}A). The cluster centers are then updated to be the mean of all objects in the cluster. These two steps are repeated until the clusters don't change anymore (Figure~\ref{img:centroid}B) \citep{k-means:01}. Usually, the Euclidean, Minkowski or Manhattan metrics are used for distance computation. During the shifting process, objects also may change their clusters.
 	This method suffers from the disadvantage that it requires the number of clusters in advance and is also sensitive to the initial centroid \citep{centroid:14}.
 	
    	\begin{figure}[H]
@@ -337,33 +328,31 @@
 		\vspace{-10pt}
 		\def\svgwidth{\textwidth}
 		\input{images/01_intro/partitioning_comb.pdf_tex}
-		\caption[Centroid-based clustering.]{Centroid-based clustering. The number of clusters is set to three. \textbf{(A)}~The centroids (red cross) are initialized randomly. \textbf{(B)}~After 5 iterations the shifting converges and builds the final clusters.}
+		\caption[Centroid-based clustering using the k-means algorithm.]{Centroid-based clustering using the k-means algorithm. The number of clusters is set to three. \textbf{(A)}~The centroids (red cross) are initialized randomly. \textbf{(B)}~After five iterations the shifting converges and builds the final clusters.}
 		\label{img:centroid}
 	\end{figure}
 
 \subsubsection*{Distribution-based clustering}
-    For this method, a probability model is used to assign the objects to clusters. Those probabilistic models usually have some parameters, which initially have to be guessed to represent the data (Figure~\ref{img:distribution}A). Afterward, the cluster probabilities can be calculated for each object, allowing for a re-estimation of the probability parameters. This is performed iteratively until the parameters converge (Figure~\ref{img:distribution}B).
+    For this method, a probability model is used to assign the objects to clusters. Those probabilistic models usually have some parameters, which initially have to be guessed to represent the data (Figure~\ref{img:distribution}A). Afterwards, the cluster probabilities can be calculated for each object, allowing for a re-estimation of the probability parameters. This is performed iteratively until the parameters converge (Figure~\ref{img:distribution}B). 
     	\begin{figure}[H]
     	\centering
 		\vspace{-10pt}
     	\def\svgwidth{\textwidth}
     	\input{images/01_intro/distribution.pdf_tex}
-    	\caption[Distribution-based clustering.]{Distribution-based clustering using a Gaussian mixture model with random initialization of parameters and the number of components set to three. \textbf{(A)}~Random initalization of parameters of the distribution. \textbf{(B)}~Convergence after 17 iterations forming the final clusters.}
+    	\caption[Distribution-based clustering using a Gaussian mixture model.]{Distribution-based clustering using a Gaussian mixture model. The distribution parameters are initialized randomly and the number of components is set to three. \textbf{(A)}~Random initialization of parameters of the distribution. \textbf{(B)}~Convergence after 17 iterations forming the final clusters.}
     	\label{img:distribution}
     \end{figure}
-    
 	Each object is then assigned to its respective cluster based on the probability it belongs to a certain distribution in the underlying data.
-
-	The biggest drawback of this method is, that it is computationally intensive and may be over-fitting the data \citep{distribution-based:04}. Furthermore, the assumption of the distribution has to fit the data, which is not likely known a priori \citep{distribution-based:03}. One representative for this method are Gaussian mixture models using the expectation-maximization algorithm (Figure~\ref{img:distribution}) \citep{distribution-based:ex-max:09}.
+	The biggest drawback of this method is that it is computationally intensive and may be over-fitting the data \citep{distribution-based:04}. Furthermore, the assumption of the distribution has to fit the data, which is not likely known a priori \citep{distribution-based:03}. One representative for this method are Gaussian mixture models using the expectation-maximization algorithm (Figure~\ref{img:distribution}) \citep{distribution-based:ex-max:09}.
 
 \subsubsection*{Density-based clustering}
-   	\begin{wrapfigure}{R}{0.5\textwidth}
-   		\vspace*{-55pt}
+   	\begin{wrapfigure}[22]{R}{0.5\textwidth}
+   		\vspace*{-23pt}
 		\centering
 		\def\svgwidth{0.5\textwidth}
 		\input{images/01_intro/density.pdf_tex}
-		\caption[Density-based clustering.]{Density-based clustering using \dbscan \citep{dbscan:96}. The radius is set to 0.07 and the number of samples in a neighborhood set to ten. A core object (red circle) has at least ten other object within its radius. Density-reachable objects (red dashed circle) have fewer objects in their circle, but are in a core objects reachability. Objects that do not have either of these properties are referred to as noise (red dotted circle). The result of the clustering are two clusters (blue and green) and a lot of unclustered objects (black points).}
-		
+		\captionsetup{width=.95\linewidth}
+		\caption[Density-based clustering using \dbscan.]{Density-based clustering using \dbscan \citep{dbscan:96}. The radius is set to 0.07 and the number of samples in a neighborhood set to ten. A core object (red circle) has at least ten other object within its radius. Density-reachable objects (red dashed circle) have fewer objects in their circle, but are in a core objects reachability. Objects that do not have either of these properties are referred to as noise (red dotted circle). The result of the clustering are two clusters (blue and green) and a lot of unclustered objects (black points).}
 		\label{img:density}
 	\end{wrapfigure}
     Other than the distribution-based clustering, the density-based is a non-parametric approach. The reachability between objects plays a major role in this method (Figure~\ref{img:density}).
@@ -378,17 +367,18 @@
 	Objects that are not part of density areas, thus have not enough directly density-reachable objects, are considered noise.
 	An advantage of this method is that the number of clusters doesn't have to be specified and the clusters may be arbitrarily shaped in the dimension space \citep{density-based:11}.
 	Two of the most common algorithms implementing this approach are the \dbscan \citep{dbscan:96} and the mean-shift algorithm \citep{mean-shift:95}.\\
-
-    Additionally, one can differentiate between hard and soft clustering. Hard clustering describes that each object has a cluster it belongs to or not. In soft clustering, also called fuzzy clustering, each object can belong to more than one cluster. Each element is a member of a cluster with a certain probability \citep{hard-vs-soft:14}.
+	\\
+	\noindent
+    Additionally, one can differentiate between hard and soft clustering. Hard clustering describes that each object has a cluster it belongs to or not, e.g. centroid-based clustering. In soft clustering, also called fuzzy clustering, each object can belong to more than one cluster, e.g., distribution-based clustering. Each element is a member of a cluster with a certain probability \citep{hard-vs-soft:14}.
 
 
 	\subsection{Clustering in bioinformatics}
 	The problem of clustering biological sequences is probably as old as bioinformatics itself. For example, already in the year 2007, it was aspired to remove redundant sequences from the Uniprot database to speed up the search of sequences in their database \citep{uniref:07}. However, with the rise of Next-Generation Sequencing, it becomes more and more relevant to handle the massively produced data.
 	
-	Over the last years, there have been various attempts for clustering biological sequences using one or multiple implementations of the methods described in section~\ref{ss:clustering} above such as \cdhit \citep{cd-hit:06, cd-hit:12}, \uclust \citep{uclust:10}, \linclust \citep{linclust:18} or \mclust \citep{meshclust:18}. Based on their application and the input data, all of these tools have their advantages and disadvantages, however their performance on clustering (\textit{de novo}) transcriptome assemblies remains particularly unknown.
-	As mentioned above, the similarity of objects has to be compared to each other. For biological sequences, current clustering tools use different methods to calculate the sequence similarity thus showing some kind of relationship between them.
-	\cdhit, for example, compares sequences by calculating sequence alignments between them \citep{cd-hit:12}.
-	Another approach is the extraction of k-mer profiles as properties for sequences and performing the clustering based on this. This method was used in a recent study of metagenomic binning \citep{binning:16}.
+	Over the last years, there have been various attempts for clustering biological sequences, such as \cdhit \citep{cd-hit:06, cd-hit:12}, \uclust \citep{uclust:10}, \linclust \citep{linclust:18} or \mclust \citep{meshclust:18}. Based on their application and the input data, all of these tools have their advantages and disadvantages, however their performance on clustering (\textit{de novo}) transcriptome assemblies remains particularly unknown.
+	As mentioned above, the similarity of objects has to be compared to each other. For biological sequences, current clustering tools use different methods to calculate the sequence similarity, thus showing some kind of relationship between them.
+	\cdhit, for example, compares sequences by calculating sequence alignments \citep{cd-hit:12}.
+	Another approach is the extraction of k-mer profiles as properties for sequences and performing the clustering based on this information, which was recently performed for metagenomic binning \citep{binning:16}.
 	In comparison, \mclust calculates similarities using alignment-free k-mer statistics such as length difference, Czekanowski similarity or Manhattan distance \citep{meshclust:18}.
 	Unlike the general purpose of clustering sequences, recent research also focuses on clustering \textit{de novo} transcriptome assemblies, such as \grouper \citep{Grouper:18} and the \orp.
 	As mentioned above, the \orp uses multiple transcriptome assemblies to enhance the resulting assembly regarding the completeness. Consequently, the tool implements a custom clustering algorithm.
@@ -431,7 +421,7 @@
 	\end{table}
 
 \subsubsection*{Reference datasets}
-	To evaluate the datasets with the programs from section~\ref{ssec:evaluation} the corresponding reference files for \ecoli (ASM584, v2; from NCBI) and \celegans (WBCel235, v96; from Ensembl) were used.
+	To evaluate the datasets with the programs from Section~\ref{ssec:evaluation} the corresponding reference files for \ecoli (ASM584, v2; from NCBI) and \celegans (WBCel235, v96; from Ensembl) were used.
 
 \newpage
 \subsubsection*{Simulated dataset}
@@ -447,7 +437,7 @@
 			total & 4046 & 6255 \\ \addlinespace
 			protein-coding & 2908 & 5055 \\ \addlinespace
 			ncRNA & 809 & 811 \\ \addlinespace
-			antisense RNA & 14 & 15 \\ \addlinespace
+			antisense~RNA & 14 & 15 \\ \addlinespace
 			lincRNA & 23 & 23 \\ \addlinespace
 			rRNA & 5 & 5 \\ \addlinespace
 			miRNA & 33 & 92 \\ \addlinespace
@@ -458,14 +448,14 @@
 			\bottomrule
 		\end{tabular}
 	\end{wraptable}
-	The artificial dataset was created using the protein-coding and non-coding information of the first chromosome of \celegans. The distribution between the different types of RNA is listed in Table~\ref{table:input_flux}. A total of 1,000,000 paired-end reads with a length of 100~bases were created using \flux (Version 1.2.1) \citep{flux-simulator}. \flux is a tool that simulates the technical processes, such as reverse transcription, fragmentation, adapter ligation, PCR amplification as well as the sequencing to create FASTQ files. For each step a model based on real sequencing data is used, ensuring that the artificial reads have the same features and problems as real reads. The complete parameters and models used can be found in the supplemental data (Section \ref{appendix:supplements}). Note that the miRNAs include pre-miRNAs, which are represented as isoforms in Table~\ref{table:input_flux}. Furthermore, the existing isoforms of miRNAs, ncRNAs and antisenseRNAs usually only differ a few nucleotides, but are listed as single isoforms in the annotation files.
+	The artificial dataset was created using the protein-coding and non-coding information of the first chromosome of \celegans. The distribution between the different types of RNA is listed in Table~\ref{table:input_flux}. A total of 1,000,000 paired-end reads with a length of 100~bases were created using \flux (Version 1.2.1) \citep{flux-simulator}. \flux is a tool that simulates the technical processes, such as reverse transcription, fragmentation, adapter ligation, PCR amplification as well as the sequencing to create FASTQ files. For each step a model based on real sequencing data is used, ensuring that the artificial reads have the same features and problems as real reads. The complete parameters and models used can be found in the \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/flux_simulator}{supplemental data} (See Section~\ref{appendix:supplements}). Note that the \mbox{miRNAs} include pre-miRNAs, which are represented as isoforms in Table~\ref{table:input_flux}. Furthermore, the existing isoforms of \mbox{miRNAs}, \mbox{ncRNAs} and antisense~RNAs usually only differ a few nucleotides, but are listed as single isoforms in the annotation files.
 
 \subsection{\textit{De novo} transcriptome assemblies}
 	\label{ssec:assemblies}
 	The tool \fastp (Version 0.20) was used to take care of all necessary preprocessing steps \citep{fastp:18}. \fastp is an ultra-fast all-in-one FASTQ preprocessor. The default settings were used to perform a quality filter (Phred~score~>~15), length filter (Reads~>~15~bp) and adapter trimming (automatic detection). The parameter \texttt{-{}-low\_complexity\_filter} (30~\%) was enabled to remove low complexity, defined as the percentage of bases that differ from the following base. For paired-end reads, the option \texttt{-c} was used for base correction. Additionally, the parameter \texttt{-{}-detect\_adapter\_for\_pe} was enabled to automatically detect adapter sequences for paired-end data.\\
 	
 	\noindent
-	Three different programs were used to perform the \textit{de novo} transcriptome assemblies. The assemblers \spades \citep{rnaSPAdes:18}, \soap \citep{SOAPdenovo-Trans:14} and \trinity \citep{Trinity:11} were chosen, because they performed comparatively well in a recent studies \citep{hoelzer:19}
+	Three different programs were used to perform the \textit{de novo} transcriptome assemblies. The assemblers \spades \citep{rnaSPAdes:18}, \soap \citep{SOAPdenovo-Trans:14} and \trinity \citep{Trinity:11} were chosen, because they performed comparatively well in a recent studies \citep{hoelzer:19}.
 	
 	\spades (Version 3.13.1) was used with default settings. By default, the tool incorporates two different k-mer sizes into the assembly process. 
 	The k-mer size is based on the average read length. The upper k-mer size is approximately \sfrac{1}{2} of the read length and the lower approximately \sfrac{1}{3} of the read length.
@@ -473,17 +463,17 @@
 	Since \soap (Version 1.04) doesn't perform multiple k-mer assemblies by default, the tool was started with two different k-mers. The k-mer sizes are roughly \sfrac{1}{2} and \sfrac{2}{3} of the input read length. Finally, the two assemblies were merged using \cdhit (Version 4.8.1) \citep{cd-hit:06,cd-hit:12} with a sequence identity of 100~\% creating the final \soap assembly.
 	
 	\trinity (Version 2.8.4) was also used with default settings. The tool is subdivided into three parts: Inchworm, Chrysalis and Butterfly. Utilizing greedy k-mer based assembly (k = 25), Inchworm produces unique sequences of transcripts, representing a set of alternative variants with shared k-mers.
-	Chrysalis then forms clusters from those contigs that are overlapping and builds a separate de Bruijn graph for each cluster.
+	Chrysalis then forms clusters from those contigs that are overlapping and builds a separate De Bruijn graph for each cluster.
 	Subsequently, Butterfly traces the routes that reads can take through the graph and reports all trustworthy transcript sequences, representing alternatively splices isoforms.\\
 	
 	\noindent
-	The three final assemblies from \spades, \soap and \trinity, were then concatenated into one file and served as a basis for the following clustering methods. All steps mentioned in this section were combined in one pipeline using \snakemake and can be found on \href{https://github.com/lmfaber/multi_assembly}{GitHub} (see Section \ref{appendix:pipelines}).
+	The three final assemblies from \spades, \soap and \trinity, were then concatenated into one file and served as a basis for the following clustering methods. All steps mentioned in this section were combined in one pipeline using \snakemake \citep{Snakemake:12} and can be found on \href{https://github.com/lmfaber/multi_assembly}{GitHub} (See Section~\ref{appendix:pipelines}).
 
-\subsection{Clustering}
-	All clustering methods were combined in a \snakemake pipeline which can be accessed via \href{https://github.com/lmfaber/clustering}{GitHub} (see Section~\ref{appendix:pipelines}).
+\subsection{Clustering tools}
+    All clustering methods were combined in a \snakemake pipeline as well, which are accessible via \href{https://github.com/lmfaber/clustering}{GitHub} (See Section~\ref{appendix:pipelines}).
 	
 \subsubsection*{cd-hit-est}
-	\cdhit (Version 4.8.1) \citep{cd-hit:06, cd-hit:12} performs clustering based on sequence similarity. The program uses a short word filter to reduce the number of alignments that have to be calculated for sequence similarity. In brief, this relies on the idea, that two sequences with a certain similarity percentage also share certain counts of different k-mers. Therefore, if those conditions are not satisfied, no alignment has to be computed \citep{cd-hit:01}.
+	\cdhit (Version 4.8.1) \citep{cd-hit:06, cd-hit:12} performs clustering based on sequence similarity. The program uses a short word filter to reduce the number of alignments that have to be calculated for sequence similarity. In brief, this relies on the idea that two sequences with a certain similarity percentage also share certain counts of different k-mers. Therefore, if those conditions are not satisfied, no alignment has to be computed \citep{cd-hit:01}.
 	
 	The similarity of clustered sequences can be set with the parameter \texttt{-c}. Two different runs with two settings of sequence similarity were performed. One approach was quite strict with a sequence similarity of 100~\% (c~=~1) while the other one was less stringent with a similarity of 90~\% (c~=~0.9).
 
@@ -491,31 +481,31 @@
 	The \orp (Version 2.2.6) \citep{OysterRiverProtocol:18} is a pipeline that also has the aim of combining the strengths of different assemblers to generate a better overall assembly.
 	
 	The \orp removes Illumina sequencing adapters and trims the reads with \trim \citep{Trimmomatic:14}. Subsequently, they are error corrected using \rcorrector \citep{RCorrector:15}.
-	\citeauthor{OysterRiverProtocol:18} is using three assemblers. \trinity was used with default settings (k~=~25) and without read normalization. For \spades two different k-mer sizes were used (k~=~55/75) in two distinct runs. Other than described in their paper and also mentioned on their website, the assembler \shannon \citep{Shannon:16} was replaced by \transabyss \citep{Trans-ABySS:10} and used with a k-mer size of 32. Those four assemblies are then merged using the following description.
+	\citeauthor{OysterRiverProtocol:18} is using three assemblers \citep{OysterRiverProtocol:18}. \trinity was used with default settings (k~=~25) and without read normalization. For \spades, two different k-mer sizes were used (k~=~55/75) in two distinct runs. Other than described in their paper and also mentioned on their website, the assembler \shannon \citep{Shannon:16} was replaced by \transabyss \citep{Trans-ABySS:10} and used with a k-mer size of 32. Those four assemblies are then merged using the following description.
 	
-	The merging process is performed using \orthofuse. First, all transcripts are concatenated and then sorted into groups of homologous transcripts using a modified version of \orthofinder \citep{OrthoFinder:15}, that accepts nucleotide sequences. The protocol then makes use of \transrate{s} \cite{TransRate:16} contig scores. For each homologous group, only the best contig (highest contig score) is accepted for the final assembly.\\
+	The merging process is performed using \orthofuse. First, all transcripts are concatenated and then sorted into groups of homologous transcripts using a modified version of \orthofinder \citep{OrthoFinder:15}, which accepts nucleotide sequences. The protocol then makes use of \transrate{s} \cite{TransRate:16} contig scores. For each homologous group, only the best contig (highest contig score) is accepted for the final assembly.
 	Because the \orp uses \transrate for their merging process, the pipeline is restricted to paired-end data only. The contig score from \transrate is, among other things, dependent on information coming from read pairs, making its calculation only possible for paired-end data.
 	
-	We used the paired-end reads preprocessed with \fastp (Section~\ref{ssec:assemblies}) as input for this pipeline in all of the paired-end datasets. Since the fastp preprocessing was chosen to be not very restrictive, only a few reads get filtered out, similar to the quality filtering directly performed by the \orp.
+	We used the paired-end reads preprocessed with \fastp (Section~\ref{ssec:assemblies}) as input for this pipeline in all of the paired-end datasets. Since the \fastp preprocessing was chosen to be not very restrictive, only a few reads get filtered out, similar to the quality filtering directly performed by the \orp.
 
 \subsubsection*{Linclust}
 	The algorithm implemented in \linclust \citep{linclust:18} can reduce the number of pairwise sequence comparisons drastically. Sequences with similar k-mers are grouped and the longest sequence is set as the center of the group. 
 	Each sequence is then compared only with each representative sequence with which it shares a k-mer, and not with all other sequences that it shares a k-mer. For this reason, the runtime scales linear with the size of the input set of sequences and is independent of the number of clusters.
 	The sequence identity scores are then formed into a graph and trimmed with an identity threshold. The representative sequence is selected via greedy incremental clustering, which will almost always yield the longest sequence as a result.
 
-	Originally implemented only for protein sequences, an option for nucleotide sequences was added later. \linclust (Version 10.6d92c) was used with default parameters according to the manual available in the corresponding GitHub repository.
+	Originally implemented only for protein sequences, an option for nucleotide sequences was added later. \linclust (Version 10.6d92c) was used with default parameters according to the manual available in the corresponding \href{https://github.com/soedinglab/mmseqs2/wiki#linclust}{GitHub repository}.
 
 \subsubsection*{Grouper}
-	\grouper \citep{Grouper:18} is a program that is specifically designed to cluster \textit{de novo} transcriptome assemblies for further downstream analyses. The tool is based on the equivalence classes provided by \salmon \citep{salmon:17}, which gives information about how many reads are shared between contigs. With this information a weighted undirected graph is constructed, representing contigs as nodes. The weight of the edges is based on the number of shared reads between contigs compared to the amount of individually mapped reads. The graph is then clustered using \mcl \citep{mcl:00}.
-	
-	If provided with a reference genome of a related species \grouper will also use annotations to improve the clustering. Since no clustering method used information from related species in this master thesis, this option was not used to allow a fair comparison.
+    \grouper \citep{Grouper:18} is a program that is specifically designed to cluster \textit{de novo} transcriptome assemblies for further downstream analyses. The tool is based on the equivalence classes provided by \salmon \citep{salmon:17}, which gives information about how many reads are shared between contigs. With this information, a weighted undirected graph is constructed, representing contigs as nodes. The weight of the edges is based on the number of shared reads between contigs compared to the amount of individually mapped reads. The graph is then clustered using \mcl \citep{mcl:00}.
+
+	If provided with a reference genome of a related species, \grouper will also use annotations to improve the clustering. Since, in this master's thesis, no clustering method used information from related species, this option was not used to allow a fair comparison.
 	For the quasi-mapping with \salmon, duplicate transcripts were kept while indexing using the parameter \texttt{-{}-keepDuplicates}. The mappings were validated with \texttt{-{}-validateMappings} and orphan reads were allowed though \texttt{-{}-allowOrphans}. To create the equivalence class the option \texttt{-{}-dumpEq} was passed.
-	\grouper (Version 0.1.1) was then started two different times with the parameters \texttt{orphan} and \texttt{mincut} set both to true or false. If those flags are enabled, \citeauthor{Grouper:18} state that \grouper may produce better results in case of a lower quality assembly.
+	\grouper (Version 0.1.1) was then started two different times with the parameters \texttt{orphan} and \texttt{mincut} set both to true or false. If those flags are enabled, \citeauthor{Grouper:18} state that \grouper may produce better results in case of a lower quality assembly \citep{Grouper:18}.
 	
-	Despite clustering, the tool does not select a representative sequence per cluster. To overcome this limitation simply the longest sequence was chosen as representative, similar to \cdhit.
+	Despite clustering, the tool does not select a representative sequence per cluster. To overcome this limitation, the longest sequence was chosen as representative, similar to \cdhit.
 
 \subsubsection*{MeShClust}
-    Most of the tools available for clustering nowadays are working with greedy algorithms, e.g. \cdhit. For those tools, the user must provide a sequence similarity score to define how similar sequences should be to be grouped into one cluster. \mclust \citep{meshclust:18} describes itself as an intelligent tool for clustering DNA, which is independent of the user input. It utilizes an unsupervised machine learning algorithm, respectively called the mean shift algorithm.
+    Most of the tools available for clustering nowadays are working with greedy algorithms, e.g. \cdhit. For those tools, the user must provide a sequence similarity score to define how similar sequences should be to be grouped into one cluster. \citeauthor{meshclust:18} describe \mclust as an intelligent tool for clustering DNA, which is independent of the user input \citep{meshclust:18}. It utilizes an unsupervised machine learning algorithm, respectively, called the mean shift algorithm.
 	In brief, the input sequences are sorted based on their length. The shortest sequence is then picked as a center sequence. Based on this sequence, further similar sequences are detected. Similar sequences are selected using a General Linear Model (GLM) that was trained on the original data using alignment-free measures such as sequence length difference, Pearson coefficient, etc. After that, the mean shift is applied and the sequence closest to the mean is set as the new center sequence. This process is repeated until no new sequences join the cluster. In the next iteration, the shortest sequence is taken again as a new cluster start and the process is repeated until no sequences are left.
 
 	\mclust (Version 1.2.0) was used with default parameters and the representative sequences were extracted from the resulting cluster file.
@@ -527,11 +517,11 @@
 	\label{sssec:karma}
 	\karma (\textbf{K}-mer \textbf{A}nd quasi-\textbf{R}ead-\textbf{MA}pping based clustering) is the working name of the program developed during this master's thesis. It combines a k-mer based clustering with a read-graph-based method, similar to \grouper. The general workflow of \karma is shown in Figure~\ref{img:karma_workflow}.
 	
-	As seen in Figure~\ref{img:karma_workflow}A1, the pipeline starts with a k-mer based clustering. A k-mer profile for each sequence is generated resulting in a high dimensional space matrix. The k-mer frequency was then normalized to the sequence length. Initially, the k-mer size was adapted from \citeauthor{binning:16} that performed a successful metagenomic binning. In their study, the authors tested different k-mer sizes along with a 5p6-mer, which is a combination of 5-mers and palindromic 6-mers. 
+	As seen in Figure~\ref{img:karma_workflow}A1, the pipeline starts with a k-mer based clustering. A k-mer profile for each sequence is generated resulting in a high dimensional space matrix. The k-mer frequency was then normalized to the sequence length. Initially, the k-mer size was adapted from \citeauthor{binning:16} \citep{binning:16} that performed a successful metagenomic binning. In their study, the authors tested different k-mer sizes along with a 5p6-mer, which is a combination of 5-mers and palindromic 6-mers. 
 	The results using 5p6-mers are comparatively superior if more than 50 clusters are generated \citep{binning:16}.
 	Considering the target of this pipeline, where each cluster will represent a gene with its isoforms, the threshold of 50 clusters will be exceeded. For example, \ecoli has more than 3000 genes that are expressed during exponential growth, not accounting for non-protein-coding transcripts \citep{ecoli:99}.
 	
-	The huge dimensional matrix contains a lot of information, not all of which is needed to perform successful clustering. For this reason the information is usually reduced to features that are relevant throughout all sequences. The Barnes-Hut implementation of \tsne from \citeauthor{binning:16}, until recently commonly used to cluster single cell RNA-Seq data \citep{tSNE_common:19}, was replaced by `Uniform Manifold Approximation and Projection for Dimension Reduction' (\umap) \citep{umap:18}.
+	The huge dimensional matrix contains a lot of information, not all of which is needed to perform successful clustering. For this reason the information is usually reduced to features that are relevant throughout all sequences. The Barnes-Hut implementation of \tsne from \citeauthor{binning:16} \citep{binning:16}, until recently commonly used to cluster single cell RNA-Seq data \citep{tSNE_common:19}, was replaced by `Uniform Manifold Approximation and Projection for Dimension Reduction' (\umap) \citep{umap:18}.
 	\subsubsection*{UMAP}
 	Just like \tsne, \umap is a k-neighbor graph-based algorithm, which can be divided into two steps for a quick summary of the algorithm. The first step is the graph construction.
 	For each input data point the set of the k-nearest neighbors are calculated utilizing the nearest neighbor descent algorithm \citep{k-near:11}, resulting in fuzzy simplicial sets.
@@ -590,7 +580,7 @@
 	\begin{table}[H]
 		\centering
 		\captionsetup{width=0.71\linewidth}
-		\caption[Comparison of the weighting function between \karma and \grouper.]{Comparison of the weighting function from \karma and \grouper. The table shows the different results for the calculation of weights.}
+		\caption[Comparison of the weighting function from \karma and \grouper.]{Comparison of the weighting function from \karma and \grouper. The table shows the different results for the calculation of weights.}
 		\label{table:compare}
 		\begin{tabular}{llrrrrrr}
 			\toprule
@@ -615,10 +605,10 @@
 		\def\svgwidth{\textwidth}
 		\input{images/02_methods/karma_workflow.pdf_tex}
 %		\includegraphics[width=\textwidth]{images/karma/karma_save.png}
-		\caption[Workflow scheme of \karma.]{\label{img:karma_workflow} Workflow scheme for \karma. \textbf{A} A pre-clustering step using k-mers is done by \umap and \hdbscan. The existing clusters are then supplemented with the information from the equivalence classes from \salmon.
-			\textbf{B} Cluster trimming. Each contig that doesn't share contigs with all other contigs in a k-mer based cluster is moved to a 'unclustered group'(red).
-			\textbf{C} Cluster redefinition. Contigs from the 'unclustered group' are added to each cluster, if they share reads with the specific cluster.
-			\textbf{D} \mcl clustering \& sequence selection. The resulting groups are then clustered using \mcl. Each contig has a score equal to the sum of the weights of the edges to which it is connected. For each subgroup the contig with the highest score is chosen as representative.}
+		\caption[Workflow scheme of \karma.]{\label{img:karma_workflow} Workflow scheme for \karma. \textbf{(A)} A pre-clustering step using k-mers is done by \umap and \hdbscan. The existing clusters are then supplemented with the information from the equivalence classes from \salmon.
+			\textbf{(B)} Cluster trimming. Each contig that doesn't share contigs with all other contigs in a k-mer based cluster is moved to a 'unclustered group'(red).
+			\textbf{(C)} Cluster redefinition. Contigs from the 'unclustered group' are added to each cluster, if they share reads with the specific cluster.
+			\textbf{(D)} \mcl clustering \& sequence selection. The resulting groups are then clustered using \mcl. Each contig has a score equal to the sum of the weights of the edges to which it is connected. For each subgroup the contig with the highest score is chosen as representative.}
 	\end{figure} 
 	
 	After the graph construction, cluster trimming is performed (Figure~\ref{img:karma_workflow}B). All single contigs are removed that don't share reads with all other contigs in one cluster. Those contigs are then added to the unlabeled group.
@@ -631,7 +621,7 @@
 	For each subcluster a representative sequence has to be selected. The sum of the edge weights is calculated for every node. For each subcluster the contig with the highest overall weight is chosen as representative sequence. This means that one cluster may have multiple representative sequences, respectively isoforms.
 	
 	\begin{wraptable}{L}{8.5cm}
-		\caption[Combination of parameters.]{Parameters used for a parameter evaluation. All combinations (432) of the listed parameters were tested.}
+		\caption[Combination of parameters used for the parameter evaluation.]{Combination of parameters used for the parameter evaluation. All combinations (432) of the listed parameters were tested.}
 		\label{table:comb}
 		\begin{tabular}{lrrrrrr}
 			\toprule
@@ -645,7 +635,7 @@
 		\end{tabular}
 	\end{wraptable}
 	
-	The source code of \karma is freely available on \href{https://github.com/lmfaber/karma}{GitHub} and can also be easily installed via \href{https://anaconda.org/lmfaber/karma}{Anaconda Cloud} (see section~\ref{appendix:karma})
+	The source code of \karma is freely available on \href{https://github.com/lmfaber/karma}{GitHub} and can also be easily installed via \href{https://anaconda.org/lmfaber/karma}{Anaconda Cloud} (See Section~\ref{appendix:karma})
 	
 	Since the pipeline has a lot of parameters that can be tuned, a parameter evaluation was done for the following combinations of parameters with the simulated dataset (Table~\ref{table:comb}).\\
 	\\
@@ -708,7 +698,7 @@ The time was measured for the clustering tools on a Linux-based system (Debian~9
 	The necessary transcript abundance estimation for this metric was calculated using \salmon (Version 0.14.1) \citep{salmon:17}. The Ex90N50 values were calculated using scripts that are included in \trinity (Version 2.8.4) \citep{Trinity:11}.
 	\\
 	\\
-	The evaluation tools except \blast were also combined into a \snakemake pipeline and can be accessed via \href{https://github.com/lmfaber/evaluation}{GitHub} (see section~\ref{appendix:pipelines}).
+	The evaluation tools except \blast were also combined into a \snakemake pipeline and can be accessed via \href{https://github.com/lmfaber/evaluation}{GitHub} (See Section~\ref{appendix:pipelines}).
 
 \subsection{Sequence alignments}
 All alignments in this thesis were calculated with \muscle (Verion~3.8.31) \citep{muscle:04}.
@@ -718,7 +708,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 
 \subsection{Workflow management}
 \subsubsection*{Snakemake}
-	\snakemake is a workflow manager using python as underlying programming language. It was created to increase reproducibilty and decrease multiple calculations based on certain rules. The workflows above were created using \snakemake in version 5.5.0 \citep{Snakemake:12}.
+    \snakemake is a workflow manager using python as the underlying programming language. It was created to increase reproducibility and decrease multiple calculations based on certain rules. The workflows above were created using \snakemake in version 5.5.0 \citep{Snakemake:12}.
 
 
 %%%%%%%%%%%%%%%
@@ -728,21 +718,21 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 \section{Results}
 	\label{sec:results}
 	
-	The following Figures and Tables in this section use some aliases, which are explained as follows. `Combined' describes a concatenation of all three assemblies from \spades, \soap and \trinity. The percentage of the sequence identity threshold is added as a number behind \cdhit. \grouper has both parameters \texttt{orphan} and \texttt{mincut} enabled, whereas \grouper{}* has them disabled.
+	The following figures and tables in this section use some aliases, which are explained as follows. `Combined' describes a concatenation of all three assemblies from \spades, \soap and \trinity. The percentage of the sequence identity threshold is added as a number behind \cdhit. \grouper has both parameters \texttt{orphan} and \texttt{mincut} enabled, whereas \grouper{}* has them disabled.
 	\karma uses the default parameters described in the Methods Section~\ref{sssec:karma} and \karma{}* describes the run with the optimized parameters from Section~\ref{ssec:parameter}.
 	
 	\subsection{Different assemblers yield distinct genes and isoforms}
-	For the simulated paired-end dataset, the assemblies from \spades, \trinity and \soap were annotated via a \blast search (see Section~\ref{ssec:evaluation}).
+	For the simulated paired-end dataset, the assemblies from \spades, \trinity and \soap were annotated via a \blast search (See Section~\ref{ssec:evaluation}).
 	In total, the three assemblers produce of 3,235 genes and 3,925 isoforms together (Figure~\ref{img:difference}).
 	However, 382 genes (16~\%) and 747 isoforms (32~\%) are produced solely by individual assemblers. The assembly from \spades contains the most individual genes (270), whereas \trinity (42) and \soap (70) contain much less (Figure~\ref{img:difference}A). Likewise, \spades produces the most individual isoforms (327), while \soap (277) and \trinity (143) produce at least 50 isoforms less (Figure~\ref{img:difference}B). 
 	\begin{figure}[H]
 		\def\svgwidth{\textwidth}
 		\input{images/03_results/venn.pdf_tex}
-		\caption[Intersection of annotated transcripts from different assemblies.]{Intersection of annotated transcripts from the different assemblies produced by \spades, \soap and \trinity for the simulated paired-end \celegans dataset. Visualization created with \intervene \citep{intervene:17}. \textbf{(A)}~Intersection of distinct unique genes. \textbf{(B)}~Intersection of distinct unique isoforms.}
+		\caption[Intersection of annotated transcripts from the different assemblies.]{Intersection of annotated transcripts from the different assemblies. The transcripts were produced by \spades, \soap and \trinity for the simulated paired-end \celegans dataset. Visualization created with \intervene \citep{intervene:17}. \textbf{(A)}~Intersection of distinct unique genes. \textbf{(B)}~Intersection of distinct unique isoforms.}
 		\label{img:difference}
 	\end{figure}
 	
-	\subsection{Smaller k-mer sizes are beneficial for karma clustering}
+	\subsection{Smaller k-mer sizes are beneficial for \texttt{karma} clustering}
 	\label{ssec:parameter}
 	
 	Besides the default selection of parameters (formated italics), Table~\ref{table:parameter} lists all parameter combinations that yield the best results for the selected evaluation metrics.
@@ -753,13 +743,13 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		%% local redefinitions
 		\renewrobustcmd{\bfseries}{\fontseries{b}\selectfont}
 		\renewrobustcmd{\boldmath}{}
-		\caption[Selection of the best results for different parameters for \karma.]{A selection of the best results for different parameters for \karma. The best results are highlighted in bold. The initial parameter combination is listed in italics.}
+		\caption[A selection of the best results for different parameters for \karma.]{A selection of the best results for different parameters for \karma. The best results are highlighted in bold. The initial parameter combination is listed in italics.}
 		\label{table:parameter}
 		\resizebox{\textwidth}{!}{%
 			\begin{tabular}{rrrrrrrrrrrr}
 				\toprule
 				\multicolumn{4}{l}{\textbf{Parameters}} &  & \multicolumn{7}{l}{\textbf{Results}} \\ \cmidrule{1-4} \cmidrule{6-12} \addlinespace
-				\textbf{\begin{tabular}[c]{@{}c@{}}k-mer\\ size\end{tabular}} & \textbf{n\_neighbors} & \textbf{n\_components} & \textbf{\begin{tabular}[c]{@{}c@{}}min\\ cluster\\ size\end{tabular}} &  & \textbf{Unlabeled} & \textbf{\begin{tabular}[c]{@{}c@{}}No. of\\groups\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Mean\\ probability\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Inner\\ cluster\\ homogeneity\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Outer\\ cluster\\ homogeneity\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Genes\\ \big[\%\big] \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Isoforms\\ \big[\%\big] \end{tabular}} \\ \addlinespace
+				\textbf{\begin{tabular}[c]{@{}c@{}}k-mer\\ size\end{tabular}} & \textbf{n\_neighbors} & \textbf{n\_components} & \textbf{\begin{tabular}[c]{@{}c@{}}min\\ cluster\\ size\end{tabular}} &  & \textbf{\begin{tabular}[c]{@{}c@{}}Unlabeled\\sequences\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}No. of\\groups\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Mean\\ probability\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Inner\\ cluster\\ homogeneity\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Outer\\ cluster\\ homogeneity\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Genes\\ \big[\%\big] \end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}} Isoforms\\ \big[\%\big] \end{tabular}} \\ \addlinespace
 				\midrule
 				3 & 2 & 30 & 2 &  & 2,324 & \textbf{2,846} & 0.6752 & 0.9535 & 0.5240 & 41.28 & 30.06 \\ \addlinespace
 				3 & 2 & 40 & 20 &  & 8,043 & 181 & 0.4118 & 0.9962 & 0.3432 & 62.18 & \textbf{47.69} \\ \addlinespace
@@ -780,7 +770,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	Since the aim is to achieve a more complete assembly, the parameters that yield the most isoforms are selected for further evaluation even though they have the lowest outer cluster homogeneity (0.34) and lowest mean probability (0.41) among the shown parameter combinations. These parameters are used as a separate clustering for the examined datasets (\karma{}*).
 	Contrarily, the parameter combination with the highest number of recovered genes (63~\%) has a higher outer cluster homogeneity (0.58) and a better mean probability (0.98).
 	In general, it appears that small k-mer sizes (3-mer and 5p6-mer) are beneficial for the clustering process since the k-mer size of seven isn't among the listed parameter selection.
-	The full parameter evaluation is accessible in the \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/parameter_evaluation}{supplemental data} (see Section~\ref{appendix}).
+	The full parameter evaluation is accessible in the \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/parameter_evaluation}{supplemental data} (See Section~\ref{appendix}).
 
 
 	\subsection{Runtime analysis reveals \texttt{Linclust} as fastest clustering tool}
@@ -790,7 +780,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		The runtimes for both versions of \mclust range from 44 seconds (simulated dataset, \mclusttwo) up to 49 minutes (ERR779269, \mclust), but generally don't differ too much from each other.
 		For the two distinct runs of \cdhit, the difference is more noticeable. With a sequence identity of 90~\% (c=0.9), \cdhit usually takes longer than with a sequence identity of 100~\%. The longest run ($\sim$12 hours) of \cdhit (c=0.9) was measured for the single-end \celegans dataset (ERR2886543) and the shortest ($\sim$5 minutes) for the single-end \ecoli dataset (SRR4255368).
 		\begin{table}[H]
-			\caption[Runtime of different clustering methods.]{Runtime (hh:mm:ss) of the different clustering methods for each dataset. The best runtime per sample is marked bold. }
+			\caption[Runtime (hh:mm:ss) of the different clustering methods for each dataset.]{Runtime (hh:mm:ss) of the different clustering methods for each dataset. The best runtime per sample is marked bold. }
 			\renewrobustcmd{\bfseries}{\fontseries{b}\selectfont}
 			\renewrobustcmd{\boldmath}{}
 			\resizebox{\textwidth}{!}{%
@@ -937,7 +927,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
     	\centering
     	\def\svgwidth{\textwidth}
     	\input{images/03_results/violin/cel_ERR2886543.pdf_tex}
-    	\caption[Distribution of transcript lengths per assembly (PE, ERR2886543)]{Distribution of transcript lengths in each (clustered) assembly for the single-end \celegans dataset (ERR2886543). The $\log_{10}$ scale reaches from 10~nt (10\textsuperscript{1}) to $\sim$10,000~nt (10\textsuperscript{4}). The wideness of the violin indicates the number of sequences with a certain length. Blue: Assemblers, Orange: Concatenation of the blue assemblies, Green: Different clustering methods based on the `Combined set'. The red line represents the median sequence length and the dotted grey lines mark the quartiles.}
+    	\caption[Distribution of transcript lengths per assembly (SE, ERR2886543)]{Distribution of transcript lengths in each (clustered) assembly for the single-end \celegans dataset (ERR2886543). The $\log_{10}$ scale reaches from 10~nt (10\textsuperscript{1}) to $\sim$10,000~nt (10\textsuperscript{4}). The wideness of the violin indicates the number of sequences with a certain length. Blue: Assemblers, Orange: Concatenation of the blue assemblies, Green: Different clustering methods based on the `Combined set'. The red line represents the median sequence length and the dotted grey lines mark the quartiles.}
     	\label{img:violin:cel_ERR2886543}
     \end{figure}
 	Regarding the assemblers, \soap produces the broadest spectrum of sequence lengths between 26~nt and 14,243~nt with mostly shorter sequences (Median: 184~nt). Contrarily, \trinity has a median sequence length of 625~nt that ranges from 200~nt up to $\sim$14,000~nt.
@@ -1042,7 +1032,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 
 				\begin{itemize}
 					\item \textbf{Ex90N50 ($\uparrow$):}
-					As explained in section \ref{ssec:evaluation}, the Ex90N50 value describes the N50 value based on the 90~\% of the highest expressed transcripts  from the total normalized expression data in the assembly.
+					As explained in Section~\ref{ssec:evaluation}, the Ex90N50 value describes the N50 value based on the 90~\% of the highest expressed transcripts  from the total normalized expression data in the assembly.
 				\end{itemize}
 
 			\item \textbf{HISAT2} \citep{hisat2:15}
@@ -1123,7 +1113,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		\hspace{-13pt}
 		\def\svgwidth{1.1\textwidth}
 		\input{images/03_results/heatmap_cel_flux.pdf_tex}
-		\caption[Normalized assembly evaluation metrics (\celegans, PE, CEL\_FLUX).]{$[0,1]$-normalized assembly evaluation metrics for the artificial paired-end \celegans dataset (CEL\_FLUX). A score of 1 represents the best score. The last row summarizes all other metrics into a comparative score. `Combined' is the concatenated version from all three assemblers. The number in \cdhit represents the percentage of the chosen identity threshold. \grouper/\grouper{}*: \grouper with parameters \texttt{orphan} and \texttt{mincut} disabled/enabled. \karma: Parameters according to Section~\ref{sssec:karma}. \karma{}*: Parameters chosen in Section~\ref{ssec:parameter}. }
+		\caption[Normalized assembly evaluation metrics (\celegans, PE, CEL\_FLUX).]{$[0,1]$-normalized assembly evaluation metrics for the artificial paired-end \celegans dataset (CEL\_FLUX). A score of 1 represents the best score. The last row summarizes all other metrics into a comparative score. `Combined' is the concatenated version from all three assemblers. The number in \cdhit represents the percentage of the chosen identity threshold. \grouper/\grouper{}*: \grouper with parameters \texttt{orphan} and \texttt{mincut} disabled/enabled. \karma: Parameters according to Section~\ref{sssec:karma}. \karma{}*: Parameters chosen in Section~\ref{ssec:parameter}.}
 		\label{img:cel_flux}
 	\end{figure}
 
@@ -1133,7 +1123,6 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 %%%%%%%%%%%%%%%%%%
 \newpage
 \section{Discussion}
-	%This master's thesis aimed to improve a \textit{de novo} transcriptome assembly through a combination of multiple assemblers and to cluster the results to remove the redundancy. 
 	The evaluation metrics from the previous section provide an interesting insight into the world of clustering \textit{de novo} transcriptome assemblies.
 	While the self-implemented method \karma doesn't perform too well overall, we get a deeper understanding of the underlying algorithm. Furthermore, the comparison of several state-of-the-art clustering methods shows significant differences between single-end and paired-end RNA-Seq data.
 
@@ -1150,13 +1139,13 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	\subsection{Large datasets may be disadvantageous for \texttt{Grouper}}
 		\label{ssec:discussion:grouper}
 		%% GROUPER
-		Although particularly designed for the clustering of de novo transcriptome assemblies, \grouper consistently scores the worst sum score for all datasets.
+		Although particularly designed for the clustering of \textit{de novo} transcriptome assemblies, \grouper consistently scores the worst sum score for all datasets.
 		Nevertheless, the tool gets comparatively good scores for the following evaluation metrics: \textit{Remapping rate}, \textit{BUSCOs (F)}, \textit{BUSCOs (CD)}, \textit{uncovered bases} and \textit{misassemblies}.
 		Those metrics are affected by the size of the \textit{de novo} transcriptome assembly in different ways.
 		
 		The two \busco scores (F and CD) and \textit{misassemblies} metrics are pure quantification measurements. Furthermore, they have the property that a smaller value represents a better score.
-		Naturally, if the transcriptome assembly has a smaller size, the chance of, e.g., a misassembly being present, is inevitably smaller. The same principle applies for \textit{fragmented} and \textit{complete and duplicated BUSCOs}. 
-		Consequently, \textit{missing} and \textit{complete and single BUSCOs} have always the lowest score. For example, the clustered assembly from \grouper in the single-end \celegans dataset contains only three contigs, while the \textit{Nematoda} dataset from \busco consists of 987 \busco groups. With such a difference, it comes to no surprise that those two \busco scores (M and CS) have consistently bad scores of zero.
+		Naturally, if the transcriptome assembly has a smaller size, the chance of, e.g., a misassembly being present, is inevitably smaller. The same principle applies to \textit{fragmented} and \textit{complete and duplicated BUSCOs}. 
+		Consequently, \textit{missing} and \textit{complete and single BUSCOs} always have the lowest score. For example, the clustered assembly from \grouper in the single-end \celegans dataset contains only three contigs, while the \textit{Nematoda} dataset from \busco consists of 987 \busco groups. With such a difference, it comes to no surprise that those two \busco scores (M and CS) have consistently bad scores of zero.
 		
 		Even though the metric \textit{uncovered bases} and \textit{remapping rate} consider the proportion of uncovered bases and mapped reads, the scores might be misleading, in particular, for small-sized transcriptome assemblies. Even if an assembly has a hypothetical mapping rate of 100~\%, this doesn't result in a proper assembly if there is only one sequence.    
 		In consequence, considering the size of the clustered assemblies from \grouper (Figures~\ref{img:barchart_flux}, \ref{img:barcharts:cel}, \ref{img:barcharts:ecos}) the evaluation results are rather unsurprising.
@@ -1164,10 +1153,10 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		Additionally, it seems suspicious that both runs with different parameters for \texttt{orphan} and \texttt{mincut} produce the same results. The investigation of the clustering pipeline eliminates an error due to wrong parameter settings. Another reason could be that changing the parameters doesn't have that much of an effect on these datasets.
 		
 		The clusterings from \grouper always contain the longest sequences. However, the reason for such a behavior lies in the implementation of the clustering pipeline. Since \grouper doesn't provide an option of selecting representative sequences for its clusters, the longest sequence is chosen.
-		Anyway, the amount of sequences gives also information about the number of produced clusters from \grouper (2-52). The reason for the low amount of groups compared to other clustering methods may be a combination of their graph-based implementation and the huge size of the input assemblies.
+		Anyway, the amount of sequences gives also information about the number of produced clusters from \grouper (2~-~52). The reason for the low amount of groups compared to other clustering methods may be a combination of their graph-based implementation and the huge size of the input assemblies.
 		With the increase of input sequences, the graph also grows bigger, allowing for more connections between the vertices of the graph. Additionally, as shown in Table~\ref{table:compare} their weighting function (Equation~\ref{eq:grouper_distance}) could complicate the clustering process with \mcl. Higher edge weights result in a better stochastic flow between vertices and if \mcl is not adjusted through its parameters, this may lead to fewer clusters.
 	
-	\subsection{Uneven sequence length distribution may be a challenge for \texttt{MeShClust}}
+	\subsection{Uneven sequence length distribution can be a challenge for \texttt{MeShClust}}
 		%%MeShClust
 		Overall, \mclust and \mclusttwo have average evaluation scores for their clustered assemblies (5.05 - 10.12) compared to \cdhit (8.35 - 12.63), which scores the best. This difference in clustering quality results could originate from the implementation of the \mclust algorithm. Unlike \cdhit, which compares sequences through actual sequence similarities, the authors of the tools used alignment-free measurements \citep{meshclust:18}. Combined with the selection of the shortest sequence for initial clusters, this could lead to a more unprecise clustering process, thus worse scores for their assembly.
     
@@ -1175,17 +1164,17 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	
 	    The concatenated assemblies from the paired-end \celegans and single-end \ecoli dataset have the lowest median sequence length (SRR5456164: 240~nt, SRR4255368: 141~nt) and shortest sequence (SRR5456164: $\sim$6,000~nt, SRR4255368: $\sim$5,000~nt). All other datasets have a median sequence length above 285~nt and a maximum sequence length up to $\sim$120,000~nt.
 		\mclusttwo was designed explicitly for longer sequences with lower similarity \citep{meshclust2:18}. Against the expectations, \mclusttwo achieves higher evaluation scores than \mclust for datasets with shorter maximum sequence lengths and smaller median sequence lengths.
-		For the paired-end \celegans dataset \mclusttwo gets a score of 10.12 and \mclust gets a score of 8.91 (Figure~\ref{img:cel_pe}). \mclusttwo scores a 8.53 and \mclust 8.19 on the single-end \ecoli dataset (Figure~\ref{img:eco_se}).
+		For the paired-end \celegans dataset, \mclusttwo gets a score of 10.12 and \mclust receives a score of 8.91 (Figure~\ref{img:cel_pe}). \mclusttwo scores an 8.53 and \mclust 8.19 on the single-end \ecoli dataset (Figure~\ref{img:eco_se}).
 		A reason for this behavior could be, among other things, the uneven distribution of longer and shorter sequences with a majority of short sequences that neither \mclust and \mclusttwo can handle.
 		Our results show that \mclust and \mclusttwo might not be suitable for \textit{de novo} transcriptome clustering.
 	
 	\subsection{\texttt{Linclust}'s time-efficient algorithm might reduce clustering quality}
-	    Looking at the runtimes of the clustering tools, one has to keep in mind that there was only one time per tool and assembly measured. Even though this makes the results less reliable, it still gives a good relative impression about the time of calculations.
+	    Looking at the runtimes of the clustering tools, one has to keep in mind that there was only one time per tool and assembly measured. Even though this makes the results less reliable, it still gives a good relative impression of the time of calculations.
 		Additionally, during the master's thesis, there were also latency problems on the used servers, which may explain some fluctuations of the runtimes.
 		For example, in the single-end \celegans dataset (ERR2886543), \cdhit (c=0.9) takes about 12~hours to complete the clustering process. For all other datasets, the runtimes are way lower ($\sim$5~minutes up to $\sim$5~hours). Also, \cdhit (c=1) finishes the clustering process after $\sim$3~hours at the latest. This leads to the assumption that \cdhit (c=1) probably has a generally lower runtime. Still, the latency of the system may be the reason for a longer runtime for the single-end \celegans dataset.    
 		For a reliable comparison, one should make sure to eliminate interfering factors beforehand and calculate the mean times from at least three distinct runs.
 		
-		However, with this information in mind, the runtime results (Table~\ref{table:runtimes}) are as expected. \linclust, which was specially developed for time-efficient clustering, performs by far the fastest clusterings, regardless of the number of sequences in the concatenated assembly.
+		However, with this information in mind, the runtime results (Table~\ref{table:runtimes}) are as expected. \linclust, which was specifically developed for time-efficient clustering, performs by far the fastest clusterings, regardless of the number of sequences in the concatenated assembly.
 		Unfortunately, the fast calculation due to reduced sequence alignments comes with its costs.
 		The clustering results usually average around a total sum score of 10-11 and are thus worse than the \cdhit clustering with 90~\% sequence identity.
 		Only in rare cases, \linclust can achieve a better score than a single assembler. For example, in Figure~\ref{img:eco_se} \linclust gets a 9.96 whereas \spades only gets 9.45. Similar to \cdhit, the clusterings tend to have a high \textit{database coverage} and few \textit{missing BUSCOs}. This is most likely because the clustered assemblies from \linclust contain comparatively more sequences than those from other tools (Figure~\ref{img:barchart_flux}, \ref{img:barcharts:cel}, \ref{img:barcharts:ecos}).
@@ -1199,16 +1188,16 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	However, most of the initial k-mer based clusters show a mix of many different genes and isoforms (Section~\ref{ssec:graphs}, Case~1 and 3).
     The functions of the different genes in a cluster seem to be completely random based on research listed in the UniProt database \citep{uniprot:18}.
 	For example, in the first case, the isoform F27D4.5.1 (\textit{bckd-1b}) is coding for a protein that positively regulates the larval development of \celegans \citep{F27:16}.
-	Contrariliy, while Y37E3.15a.1 (\textit{npp-1}) is coding for a nuclear pore protein \citep{Y37:03}, T03F1.1.2 (\textit{uba-5}) plays an essential role in the pathway responsible for environmental stress factors such as heavy metals \citep{T03:13}. This discrepancy of functions is applies for both case 1 and case 3.
+	Contrariliy, while Y37E3.15a.1 (\textit{npp-1}) is coding for a nuclear pore protein \citep{Y37:03}, T03F1.1.2 (\textit{uba-5}) plays an essential role in the pathway responsible for environmental stress factors such as heavy metals \citep{T03:13}. This discrepancy of functions applies to both case 1 and case 3.
 	Luckily, if the contigs don't share reads (Case~1), the cluster is cleaned up through coverage information. Contrarily, as seen in the second case, a cluster stays mixed, if two or more sequences for each gene/isoform are in a group. Therefore, the \hdbscan produces low-quality initial clusters.
 	A possible reason could be a poor choice of parameters that may be addressed in future work for \karma. Likewise, the normalization of k-mer profiles based on the sequence length could be problematic, hence sequences of significant different lengths are falsely grouped.
 	
-	\subsubsection{New weighting function doesn't seem to be beneficial for \texttt{MCL} clustering}
+	\subsubsection{New weighting function is not beneficial for \texttt{MCL} clustering}
 	In its current implementation, \karma seems to perform a quite restrictive clustering, which results in an overall small-sized clustered assembly.
 	When taking a closer look at the clusters built by \karma, it appears that there are a few clusters that contain more than 1,000 sequences. The problem with massive clusters is that the \mcl clustering usually only selects one representative isoform. It seems that either the parameters for \mcl are not suitable for those large clusters or the weights, similar to \grouper, are too high so that no subclusters can be formed.
 	The newly implemented equation for \karma (Equation~\ref{eq:distance}) doesn't seem to improve this behavior as initially thought.
 	
-	As seen in all heatmaps (Figure~\ref{img:cel_pe}-\ref{img:cel_flux}.), the alternative selection of parameters for \karma does not get better results as its intention was. It decreases the size of the clustered assembly and yields worse scores than the run with initial parameters. Yet, this fits with the previous statement regarding the size of the clusters. The \karma{}* assemblies usually have fewer larger clusters at the end of the process where \mcl is not dividing these into subclusters to select multiple representative sequences. This can be seen in the \texttt{clstr}-files in the \href{}{supplemental data} (Section~\ref{appendix:supplements}). Representative sequences are marked with an asterisk.
+	As seen in all heatmaps (Figure~\ref{img:cel_pe}-\ref{img:cel_flux}), the alternative selection of parameters for \karma does not get better results as expected. It decreases the size of the clustered assembly and yields worse scores than the run with initial parameters. Yet, this fits with the previous statement regarding the size of the clusters. The \karma{}* assemblies usually have fewer larger clusters at the end of the process where \mcl is not dividing these into subclusters to select multiple representative sequences. This can be seen in the \texttt{clstr}-files in the \href{https://github.com/lmfaber/master_thesis/blob/master/supplemental_data/clusterings/clusterings.txt}{supplemental data} (Section~\ref{appendix:supplements}). Representative sequences are marked with an asterisk.
 	This leads to the assumption that for the current implementation of \karma, more k-mer based clusters would result in a better-clustered assembly.
 	
 	In a similar manner to \grouper, the problems mentioned above are the reason for a comparatively low amount of sequences in the clustered assembly (Figure~\ref{img:barchart_flux}, \ref{img:barcharts:cel}, \ref{img:barcharts:ecos}). Hence, the small assembly from \karma scores also very well for the evaluation metrics, where \grouper has high scores (See Section~\ref{ssec:discussion:grouper}).
@@ -1218,7 +1207,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	
 	\subsection{Clustering multiple \textit{de novo} transcriptome assemblies is challenging}
 	    Even though \karma doesn't perform overwhelmingly good, this doesn't make its fundamental concept pointless.
-		The idea of clustering multiple \textit{de novo} transcriptome assemblies is appealing at first glance. It seems like a simple task of combination and clustering redundancy to improve the resulting transcriptome assembly. In 2018, \citeauthor{OysterRiverProtocol:18} had a similar idea which resulted in the \orp.
+		The idea of clustering multiple \textit{de novo} transcriptome assemblies is appealing at first glance. It seems like a simple task of combination and clustering redundancy to improve the resulting transcriptome assembly. In 2018, \citeauthor{OysterRiverProtocol:18} had a similar idea which resulted in the \orp \citep{OysterRiverProtocol:18}.
 		
 		However, the \orp, which was also explicitly designed for the same reason as \karma,  struggles to achieve better scores than the assemblers \soap, \spades and \trinity. 
 		For example, the tool is not able to produce a better assembly than a single assembler does for the paired-end \ecoli dataset (Figure~\ref{img:eco_pe}). For the other paired-end \celegans datasets, the \orp is only able to achieve a higher score than \soap. 
@@ -1230,18 +1219,18 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		Secondly, the sequence similarities are calculated through \orthofinder \citep{OrthoFinder:15}, which performs an all-vs-all \blast \citep{blast:90} query.
 		Since \blast as well as \cdhit and \linclust works with sequence alignments, this could explain why the clustering process works comparatively well.
 		
-		Furthermore, \citeauthor{OysterRiverProtocol:18} uses the evaluation tool \transrate to optimize the results by choosing only the best contigs from the clusters based on \transrate.
-		For the \celegans datasets, the \orp produces its best scores (Figure~\ref{img:cel_pe}, \ref{img:cel_flux}). It is also noticeable, that the size of the clustered assembly is approximately the same as the \cdhit assembly (Figure~\ref{img:barchart_flux}, \ref{img:barcharts:cel}) suggesting that the size of the assembly is somehow relevant for the evaluation scores.
+		Furthermore, \citeauthor{OysterRiverProtocol:18} \citep{OysterRiverProtocol:18} uses the evaluation tool \transrate to optimize the results by choosing only the best contigs from the clusters based on \transrate.
+		For the \celegans datasets, the \orp produces its best scores (Figure~\ref{img:cel_pe}, \ref{img:cel_flux}). Noticeably, the size of the clustered assembly is approximately the same as the \cdhit assembly (Figure~\ref{img:barchart_flux}, \ref{img:barcharts:cel}) suggesting that the size of the assembly is somehow relevant for the evaluation scores.
 		The self-created problem of redundancy seems to be a tougher challenge than initially thought.
 	
-	\subsection{Evaluation metrics don't necessarily represent a good assembly}
+	\subsection{Evaluation metrics do not necessarily represent a good assembly}
 	    As already seen in the assemblies from \karma and \grouper, some metrics get the highest score, among others, although the assembly contains far too few contigs.
 		If taken out of context, these metrics could lead to false assumptions. Hypothetically considering only the \textit{duplication ratio}, \textit{misassemblies}, percentage of \textit{uncovered bases}, \textit{complete and duplicated BUSCOs} and \textit{fragmented BUSCOs}, \grouper would have scored the best overall summed score among all assemblers and clustering tools.
 		Therefore, a broadly and carefully selected repertoire is advised to balance out possible biased metrics.
 	
 		Furthermore, the evaluation of a single \textit{de novo} transcriptome assembly by itself might be misleading or could lead to wrong conclusions.
 		Depending on the condition of an organism, cells may have a reduced set of expressed genes.
-		For example, the paired-end \ecoli dataset (ERR779269), which was part of a study to investigate the pathogenicity of ArcA (aerobic respiratory control) \citep{arca_study:15}, has significant less assembled transcripts than the single-end \ecoli dataset (Figure~\ref{img:barcharts:ecos}).
+		For example, the paired-end \ecoli dataset (ERR779269), which was part of a study to investigate the pathogenicity of ArcA (aerobic respiratory control) \citep{arca_study:15}, has significantly less assembled transcripts than the single-end \ecoli dataset (Figure~\ref{img:barcharts:ecos}).
 		ArcA represses a wide variety of aerobic enzymes under anaerobic conditions \citep{arca_function:88}.
 		Hence, the chosen sample from the study might be the control group, where ArcA is fully functional. Thus the amount of expressed genes is low.
 		It would be critical to state that a single \textit{de novo} transcriptome assembly is bad because of some metrics, without respecting the conditions of the sample. This is especially important to consider for quantitative metrics with a reference, such as \textit{BUSCOs}.
@@ -1252,7 +1241,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 		In this study, \soap uses significantly larger k-mer sizes than the other assemblers (See Section~\ref{ssec:assemblies}), which could be one reason for the better results.
 		
 		As a prokaryote, \ecoli doesn't perform alternative splicing, contrarily to \celegans \citep{celegans_splicing:17}. Hence, each gene has only one transcript.
-		As \citeauthor{optimization:10} suggest in their study, different k-mer sizes affect the profile of a transcriptome assembly.
+		As \citeauthor{optimization:10} \citep{optimization:10} suggest in their study, different k-mer sizes affect the profile of a transcriptome assembly.
 		While shorter k-mer lengths will benefit the transcript diversity, which leads to more and fragmented transcripts, longer k-mer sizes allow for higher contiguity but with lower transcript diversity \citep{optimization:10}.
 		Since \celegans likely has a higher transcript diversity because of alternative splicing, \soap will score worse for those datasets due to a large k-mer size. In return, this favors the assemblies from \soap for the \ecoli datasets.
 		
@@ -1269,7 +1258,7 @@ Venn diagrams were created with the \intervene web service \citep{intervene:17}.
 	As already mentioned, the biggest flaw for \karma seems to be the size of the assembly.
 	To address this issue, one could choose different approaches to increase the size of the clustered assembly.
 	
-	The main issue seems to be the k-mer based clusters. On the one hand, more parameter tests can be performed, with regards to the number of clusters built or evaluation metrics (Section~\ref{ssec:comparison}). On the other hand, the method could be swapped against different clustering methods that may work better, such as self-organizing maps \citep{gene_clustering:19} or Gaussian Mixture Models \citep{gene_clustering:16}.
+	The main issue seems to be the k-mer based clusters. On the one hand, more parameter tests can be performed, with regards to the number of clusters built or evaluation metrics (Section~\ref{ssec:comparison}). On the other hand, the method could be swapped against different clustering methods that may work better, such as self-organizing maps \citep{gene_clustering:19} or Gaussian mixture models \citep{gene_clustering:16}.
 	
 	Again, the \mcl clustering seems to work for small clusters (Figure~\ref{img:cluster455a}) but fails for huge clusters (Section~\ref{ssec:discussion:karma}). Maybe the inflation parameter for \mcl could be increased to get a finer clustering result and consequently more sequences.
 	
@@ -1340,6 +1329,7 @@ The sequence alignments and the unnormalized evaluation metrics are available as
 	\item \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/graphs}{/graphs}: Contains all clustering graphs from \karma for the simulated \celegans dataset.
 	\item \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/parameter\_evaluation}{/parameter\_evaluation}: Complements the information of Table~\ref{table:runtimes}. Contains the full list of results of all tested parameters for the simulated \celegans dataset.
 	\item \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/runtime}{/runtime}: Contains the runtimes of all programs.
+	\item \href{https://github.com/lmfaber/master_thesis/tree/master/supplemental_data/flux_simulator}{/flux\_simulator}: Contains the parameter file for the \flux and the simulated reads.
 
 \end{itemize}
 

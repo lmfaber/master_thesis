@@ -1,0 +1,22 @@
+REF_FILE_NAME     /mnt/prostlocal/lasse/simulated_reads/v4/genes/cel.WBcel235.97_I.extract.gtf
+GEN_DIR         /mnt/prostlocal/lasse/simulated_reads/v4/genome
+
+READ_NUMBER     1000000
+
+UNIQUE_IDS      YES
+
+### Fragmentation ###
+FRAG_SUBSTRATE  RNA
+FRAG_METHOD     UR
+FRAG_UR_ETA     400
+FRAG_UR_D0      1
+
+# use default 76-bp error model
+ERR_FILE         76
+READ_LENGTH      100
+PAIRED_END       TRUE
+POLYA_SHAPE      NaN
+POLYA_SCALE      NaN
+
+# create a fastq file
+FASTA           YES
