@@ -76,6 +76,8 @@
 \program{\muscle}{MUSCLE}
 \program{\jalview}{Jalview}
 \program{\intervene}{Intervene}
+\program{\gmap}{GMAP}
+\program{\blastn}{BLASTN}
 
 
 %Math functions
@@ -983,7 +985,7 @@ The time was measured for all clustering tools on a Linux-based system (Debian~9
 					\item \textbf{Database coverage ($\uparrow$):} The total number of bases covered by reads (in all isoforms) divided by the total length of all isoforms. 
 					\item \textbf{Duplication ratio ($\downarrow$):} The total number of aligned bases in assembled transcripts divided by the total number of isoform covered bases. This metric counts neither paralogous genes nor shared exons, only real overlaps of the assembled sequences that are mapped to the same isoform.
 					\item \textbf{95~\%-assembled isoforms ($\uparrow$):} The number of isoforms from the database that have at least 95~\% captured by a single assembled transcript.
-					\item \textbf{Misassemblies ($\downarrow$):} The number of misassembled transcripts calculated from GMAP \citep{gmap:05} and BLASTN \citep{blast:90}.
+					\item \textbf{Misassemblies ($\downarrow$):} The number of misassembled transcripts calculated from \gmap \citep{gmap:05} and \blastn \citep{blast:90}.
 				\end{itemize}
 			\item \textbf{\transrate} \citep{TransRate:16}
 				\begin{itemize}
@@ -996,7 +998,7 @@ The time was measured for all clustering tools on a Linux-based system (Debian~9
 				For some of its calculated metrics, \detonate estimates a `true' assembly. Briefly said, this would be an assembly constructed with prior knowledge of the position of each read.
 				\begin{itemize}
 					\item \textbf{K-mer compression score (KC score) ($\uparrow$):} 
-					Reflects the similarity of an assembly compared to \detonate{}s `true' assembly.					
+					Reflects the similarity of an assembly compared to \detonate{}'s `true' assembly.					
 					\item \textbf{RSEM EVAL ($\uparrow$):} A reference-free evaluation measure combining the compactness of an assembly and the support of the assembly through the set of reads it comes from.
 					\item \textbf{Nucleotide/Contig F1 ($\uparrow$):} The F1 score describes the recovery of all nucleotides/contigs contained in the `true' assembly with a identity bigger than 90~\%.
 				\end{itemize}
